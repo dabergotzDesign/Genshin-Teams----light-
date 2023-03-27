@@ -8,17 +8,24 @@ fetch(url_base + "characters/")
 .then(characters => characters.json())
 .then(characters => {
 
-    console.log(characters);
-
     for (const char of characters) {
         //create list elements
         let char_list_item = document.createElement("li");
         char_list_item.className = "character__item";
         const char_list = document.getElementById("characters__list");
-
+      
+        
         //create list image icons
         let char_list_icon = document.createElement("img");
         char_list_icon.setAttribute("src", `https://api.genshin.dev/characters/${char}/icon`);
+
+        fetch(`https://api.genshin.dev/characters/${char}/`)
+        .then(visions => visions.json())
+        .then(visions =>{
+            console.log(visions.vision);
+            char_list_icon.classList.add(visions.vision);
+            
+        });
 
         //if image is not loaded, change image
         char_list_icon.onerror = () =>{
