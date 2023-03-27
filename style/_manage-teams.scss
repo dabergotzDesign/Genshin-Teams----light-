@@ -1,0 +1,83 @@
+@use './characters-list';
+
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem auto;
+
+    label{
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    input{
+        width: 200px;
+        padding-left: .25rem;
+    }
+   
+
+    #team__name{
+        border: none;
+        border-bottom: 3px solid lightgrey;
+
+        &:focus,
+        &:active{
+            border: none;
+            outline: none;
+            border-bottom: 3px solid whitesmoke;
+        }
+    }
+
+    .error__name{
+        color: red;
+        display: none;
+    }
+
+}
+
+.save{
+    display: block;
+    border: none;
+    margin: auto;
+    padding: .25rem;
+    border-radius: .5rem;
+    font-weight: 500;
+}
+
+.team__container{
+    background-color: grey;
+    border-radius: .5rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+        .button{
+            border: none;
+            border-radius: .5rem;
+            background-color: whitesmoke;
+            padding: 0 .5rem;
+            margin: .5rem;
+            font-size: 2.5rem;
+            text-align: center;
+
+            &:active{
+                box-shadow: inset 1px 1px 2px grey;
+            }
+
+            img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+    
+}
+
+#roster{
+    .character__item:active{
+        box-shadow: 0 0 8px rgba(144, 238, 144, 0.75);
+    }
+}
+

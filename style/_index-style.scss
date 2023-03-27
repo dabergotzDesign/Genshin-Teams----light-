@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+#home_main{
+    background-color: lightgray;
+    height: 100%;
+
+    section{
+        position: relative;
+    }
+
+    .add__team-btn{
+        position: absolute;
+        border: 3px solid dimgrey;
+        left:40%;
+        font-size: 2rem;
+        padding: 0 .8rem;
+        font-weight: bold;
+        border-radius: 50%;
+        text-align: center;
+
+        &:hover{
+            background-color: dimgray;
+        }
+
+        a{
+            text-decoration: none;
+            color: dimgray;
+        }
+    }
+}
+
+#teams__list{
+
+    .team__container{
+        display: flex;
+        flex-flow: column nowrap;
+
+        .team{
+            background-color: lightgrey;
+            border-radius: .5rem;
+            height: 50px;
+            width: auto;
+            margin: .25rem;
+        }
+    }
+}
+
+
+nav{
+    li{
+        display: inline;
+        list-style: none;
+    }
+}
+
+
+//MEDIA QUERY
+
+

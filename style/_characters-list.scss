@@ -1,0 +1,87 @@
+///VARIABLES
+/// 
+$bgcolor-char-legend: purple;
+$bgcolor-char-exotic: gold;
+
+//character elements colors
+$color-anemo: #00e18d;
+$color-cryo: #51e5ff;
+$color-dendro: #8bf000;
+$color-electro: #fa62ff;
+$color-geo: #ffd955;
+$color-hydro: #518dff;
+$color-pyro: #ff7f7b;
+
+///MIXINS
+//element classes
+
+
+///Site Style
+/// 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+#list__main{
+    background-color: lightgrey;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+    padding-left: 0; //bootstrap disabled
+}
+
+.character__item{
+    display: block;
+    position: relative;
+    padding: .25rem;
+    margin: .5rem;
+    list-style: none;
+    background-color: whitesmoke;
+    border-radius: .5rem;
+    box-shadow: 0 0 8px #1111117a;
+
+    & p{
+        margin: auto;
+        padding: .5rem;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    & a{
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+    }
+}
+
+///Image Styles
+/// 
+.character__icon{
+    height: 96px;
+    width: auto;
+}
+
+
+///MEDIA QUERY
+/// 
+@media only screen and (max-width: 480px) {
+    .grid{
+        gap: .25rem;
+    }
+}

@@ -1,0 +1,22 @@
+Genshin Team App (light) - MVP (minimal viable product)
+
+##How to use
+
+- Startseite enthält vorerst leere Seite mit Navigation und Button mit plus symbol
+- Plus button öffnet neue Seite, Team Manage (kreieren von Teams)
+- Navigation führt zu Home (Startseite) und List of Characters (Liste von allen enthaltenen Charakteren)
+
+-Team kreieren
+	-- Name des Teams in Text Inputfeld eintragen
+	-- auf Icon eines Charakters klicken
+	-- auf Slot klicken in der der Charakter kommt
+
+
+##BUGS
+
+- bisher nur ein Team erstellbar
+- Team Mitglied hinzufügen noch vertauscht (erst den Slot auswählen dann auf Bild mit Figur klicken)
+- Team kann leeres Bild enthalten wenn nach Auswahl nicht auf Slot geklickt wird
+- Erstelltes Team Bilder zu groß
+
+

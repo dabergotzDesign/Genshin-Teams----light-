@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#home_main {
+  background-color: lightgray;
+  height: 100%;
+}
+#home_main section {
+  position: relative;
+}
+#home_main .add__team-btn {
+  position: absolute;
+  border: 3px solid dimgrey;
+  left: 40%;
+  font-size: 2rem;
+  padding: 0 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+}
+#home_main .add__team-btn:hover {
+  background-color: dimgray;
+}
+#home_main .add__team-btn a {
+  text-decoration: none;
+  color: dimgray;
+}
+
+#teams__list .team__container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#teams__list .team__container .team {
+  background-color: lightgrey;
+  border-radius: 0.5rem;
+  height: 50px;
+  width: auto;
+  margin: 0.25rem;
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#list__main {
+  background-color: lightgrey;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.character__item {
+  display: block;
+  position: relative;
+  padding: 0.25rem;
+  margin: 0.5rem;
+  list-style: none;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px rgba(17, 17, 17, 0.4784313725);
+}
+.character__item p {
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.character__item a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+.character__icon {
+  height: 96px;
+  width: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .grid {
+    gap: 0.25rem;
+  }
+}
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 1rem auto;
+}
+form label {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+form input {
+  width: 200px;
+  padding-left: 0.25rem;
+}
+form #team__name {
+  border: none;
+  border-bottom: 3px solid lightgrey;
+}
+form #team__name:focus, form #team__name:active {
+  border: none;
+  outline: none;
+  border-bottom: 3px solid whitesmoke;
+}
+form .error__name {
+  color: red;
+  display: none;
+}
+
+.save {
+  display: block;
+  border: none;
+  margin: auto;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.team__container {
+  background-color: grey;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team__container .button {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: whitesmoke;
+  padding: 0 0.5rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.team__container .button:active {
+  box-shadow: inset 1px 1px 2px grey;
+}
+.team__container .button img {
+  width: 48px;
+  height: 48px;
+}
+
+#roster .character__item:active {
+  box-shadow: 0 0 8px rgba(144, 238, 144, 0.75);
+}/*# sourceMappingURL=style.css.map */
