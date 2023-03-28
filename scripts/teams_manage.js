@@ -18,6 +18,15 @@ const char_roster = document.getElementById("roster");
 let char_roster_icon = document.createElement("img");
 char_roster_icon.setAttribute("src", `https://api.genshin.dev/characters/${icon}/icon`);
 
+//Element background
+fetch(`https://api.genshin.dev/characters/${icon}/`)
+        .then(visions => visions.json())
+        .then(visions =>{
+            //console.log(visions.vision);
+            char_roster_icon.classList.add(visions.vision);
+            
+        });
+
 //if image is not loaded, change image
 char_roster_icon.onerror = () =>{
    char_roster_icon.setAttribute("src", `https://api.genshin.dev/characters/${icon}/icon-big`);
@@ -33,10 +42,8 @@ char_roster_name.textContent = icon;
 char_roster_name.className = "character__name";
 char_roster_item.appendChild(char_roster_name);
 
-
+//render roster
 char_roster.appendChild(char_roster_item);
-
-
 
 }
 
@@ -200,4 +207,17 @@ const saveBtn = document.querySelector(".save");
     
 }
 
+});
+
+//Roster menu, scroll
+const buttonR = document.querySelector(".slide__r");
+const buttonL = document.querySelector(".slide__l");
+const roster = document.getElementById("roster");
+
+buttonR.addEventListener('click', ()=>{
+    roster.scrollLeft += 80;
+});
+
+buttonL.addEventListener('click', ()=>{
+    roster.scrollLeft -= 80;
 });

@@ -52,9 +52,10 @@ body{
 
     & p{
         margin: auto;
-        padding: .5rem;
+        padding: .1rem;
         text-align: center;
         vertical-align: middle;
+        font-size: .75rem;
         font-weight: 700;
         text-transform: capitalize;
     }
@@ -75,34 +76,35 @@ body{
 .character__icon{
     height: 96px;
     width: auto;
+    border-radius: .5rem;
 }
 
 .Anemo{
-    background-color: $color-anemo;
+    background-image: linear-gradient((darken($color-anemo, 10%)), $color-anemo);
 }
 
 .Cryo{
-    background-color: $color-cryo;
+    background-image: linear-gradient((darken($color-cryo, 10%)), $color-cryo);
 }
 
 .Dendro{
-    background-color: $color-dendro;
+    background-image: linear-gradient((darken($color-dendro, 10%)), $color-dendro);
 }
 
 .Electro{
-    background-color: $color-electro;
+    background-image: linear-gradient((darken($color-electro, 10%)), $color-electro);
 }
 
 .Geo{
-    background-color: $color-geo;
+    background-image: linear-gradient((darken($color-geo, 10%)), $color-geo);
 }
 
 .Hydro{
-    background-color: $color-hydro;
+    background-image: linear-gradient((darken($color-hydro, 10%)), $color-hydro);
 }
 
 .Pyro{
-    background-color: $color-pyro;
+    background-image: linear-gradient((darken($color-pyro, 10%)), $color-pyro);
 }
 
 

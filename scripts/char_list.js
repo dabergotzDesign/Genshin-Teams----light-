@@ -22,7 +22,7 @@ fetch(url_base + "characters/")
         fetch(`https://api.genshin.dev/characters/${char}/`)
         .then(visions => visions.json())
         .then(visions =>{
-            console.log(visions.vision);
+            //console.log(visions.vision);
             char_list_icon.classList.add(visions.vision);
             
         });

@@ -19,7 +19,7 @@ body{
 
     .add__team-btn{
         position: absolute;
-        border: 3px solid dimgrey;
+        background-color: darkgrey;
         left:40%;
         font-size: 2rem;
         padding: 0 .8rem;
@@ -27,29 +27,39 @@ body{
         border-radius: 50%;
         text-align: center;
 
-        &:hover{
-            background-color: dimgray;
-        }
-
         a{
             text-decoration: none;
-            color: dimgray;
+            color: whitesmoke;
+            position: relative;
         }
     }
 }
 
 #teams__list{
+    display: flex;
+    flex-flow: column nowrap;
 
-    .team__container{
+}
+
+.team__front__container{
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: dimgray;
+    margin: 1rem;
+    border-radius: .5rem;
+
+    .teams-characters{
         display: flex;
-        flex-flow: column nowrap;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
 
         .team{
-            background-color: lightgrey;
+            background-color: lightgray;
             border-radius: .5rem;
-            height: 50px;
-            width: auto;
-            margin: .25rem;
+            margin: .5rem;
+            height: 64px;
+            width: 64px;
         }
     }
 }

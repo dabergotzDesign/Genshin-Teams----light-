@@ -1,4 +1,4 @@
-@use './characters-list';
+@use './_characters-list';
 
 form{
     display: flex;
@@ -75,9 +75,32 @@ form{
     
 }
 
+.character-roster-section{
+    position: relative;
+
+
 #roster{
+    display: grid;
+    grid-template-columns: repeat(20, 130px [col-start]);
+    overflow-x: scroll;
+    
     .character__item:active{
         box-shadow: 0 0 8px rgba(144, 238, 144, 0.75);
     }
+}
+
+.slide__l,
+.slide__r{
+   position: absolute;
+   top: 10%;
+   height: 100%;
+   background-color: rgba(245, 245, 245, 0.486);
+   border: none;
+}
+
+.slide__r{
+    right: 0;
+}
+
 }
 

@@ -13,7 +13,7 @@ let testTeamStore = localStorage.getItem("Team");
 
 if(localStorage != null){
    listOfTeams.innerHTML = `
-<div class="team__container p-3 grid col">
+<div class="team__front__container p-3">
    <h4 class="teams-name">${teamsName}</h4>
    <div class="teams-characters">
    <img src="${Icon_01}" alt="${teamsName} Member" class="button team">
