@@ -167,9 +167,7 @@ const saveBtn = document.querySelector(".save");
 
     const teamObj = {
         teamName: team_name,
-        team: [
-            teamArr
-        ]
+        team:  teamArr
     }
 
     for (let i = 0; i < team_members.length; i++) {
@@ -178,8 +176,8 @@ const saveBtn = document.querySelector(".save");
         }
 
     //test obj
-    console.log(JSON.stringify(teamObj));
-    //localStorage.setItem("Team", JSON.stringify(teamObj));
+    //console.log(JSON.stringify(teamObj));
+    localStorage.setItem("Team", JSON.stringify(teamObj));
 
     //localStorage & Validation
     /*

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -230,10 +231,13 @@ form .error__name {
 .character-roster-section .slide__l,
 .character-roster-section .slide__r {
   position: absolute;
-  top: 10%;
-  height: 100%;
+  top: 60%;
+  height: 10%;
   background-color: rgba(245, 245, 245, 0.486);
   border: none;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.25rem;
 }
 .character-roster-section .slide__r {
   right: 0;

@@ -8,7 +8,7 @@ let Icon_03 = localStorage.getItem("Team_Member_3");
 let Icon_04 = localStorage.getItem("Team_Member_4");
 
 let testTeam = document.getElementById("testTeams");
-let testTeamStore = localStorage.getItem("Team");
+let testTeamStore = JSON.parse(localStorage.getItem("Team"));
 
 
 if(localStorage != null){
@@ -27,6 +27,18 @@ if(localStorage != null){
    listOfTeams.innerHTML = 'No Team added';
 }
 
-testTeam.innerHTML = `<div>${testTeamStore}</div>`
+testTeam.innerHTML = `<div>
+   <p>${testTeamStore.teamName}</p>
+   <img src="${testTeamStore.team[0]}" >
+   <img src="${testTeamStore.team[1]}" >
+   <img src="${testTeamStore.team[2]}" >
+   <img src="${testTeamStore.team[3]}" >
+
+</div>`;
+
+
+
+
+
 
 
