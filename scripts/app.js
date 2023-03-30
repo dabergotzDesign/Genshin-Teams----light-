@@ -1,40 +1,23 @@
 let listOfTeams = document.getElementById("teams__list");
 
-let teamsName = localStorage.getItem("Team_Name");
-//let teamMembersIcons = localStorage.getItem("Team_Members");
-let Icon_01 = localStorage.getItem("Team_Member_1");
-let Icon_02 = localStorage.getItem("Team_Member_2");
-let Icon_03 = localStorage.getItem("Team_Member_3");
-let Icon_04 = localStorage.getItem("Team_Member_4");
-
-let testTeam = document.getElementById("testTeams");
-let testTeamStore = JSON.parse(localStorage.getItem("Team"));
+let TeamStore = JSON.parse(localStorage.getItem("Team"));
 
 
 if(localStorage != null){
    listOfTeams.innerHTML = `
 <div class="team__front__container p-3">
-   <h4 class="teams-name">${teamsName}</h4>
+   <h4 class="teams-name">${TeamStore.teamName}</h4>
    <div class="teams-characters">
-   <img src="${Icon_01}" alt="${teamsName} Member" class="button team">
-   <img src="${Icon_02}" alt="${teamsName} Member" class="button team">
-   <img src="${Icon_03}" alt="${teamsName} Member" class="button team">
-   <img src="${Icon_04}" alt="${teamsName} Member" class="button team">
+   <img src="${TeamStore.team[0]}" alt="${TeamStore.teamName} Member" class="button team">
+   <img src="${TeamStore.team[1]}" alt="${TeamStore.teamName} Member" class="button team">
+   <img src="${TeamStore.team[2]}" alt="${TeamStore.teamName} Member" class="button team">
+   <img src="${TeamStore.team[3]}" alt="${TeamStore.teamName} Member" class="button team">
    </div>
 </div>
 `;
 }else{
    listOfTeams.innerHTML = 'No Team added';
 }
-
-testTeam.innerHTML = `<div>
-   <p>${testTeamStore.teamName}</p>
-   <img src="${testTeamStore.team[0]}" >
-   <img src="${testTeamStore.team[1]}" >
-   <img src="${testTeamStore.team[2]}" >
-   <img src="${testTeamStore.team[3]}" >
-
-</div>`;
 
 
 

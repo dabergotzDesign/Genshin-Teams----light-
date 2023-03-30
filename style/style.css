@@ -1,3 +1,14 @@
+nav {
+  background-color: #111;
+}
+
+h1 {
+  font-family: "Alegreya", serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: whitesmoke;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +19,12 @@
 html,
 body {
   height: 100%;
+  background-image: url("images/craiyon_120003_realistic_space_universe_seamless.png");
 }
 
 #home_main {
-  background-color: lightgray;
   height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25));
 }
 #home_main section {
   position: relative;
@@ -41,7 +53,7 @@ body {
 .team__front__container {
   display: flex;
   flex-flow: column nowrap;
-  background-color: dimgray;
+  background-color: whitesmoke;
   margin: 1rem;
   border-radius: 0.5rem;
 }
@@ -154,6 +166,14 @@ body {
     gap: 0.25rem;
   }
 }
+.create__team-main {
+  background-color: rgba(35, 49, 48, 0.75);
+}
+
+.team__form {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 form {
   display: flex;
   flex-flow: column nowrap;
@@ -171,6 +191,7 @@ form input {
 form #team__name {
   border: none;
   border-bottom: 3px solid lightgrey;
+  background-color: transparent;
 }
 form #team__name:focus, form #team__name:active {
   border: none;

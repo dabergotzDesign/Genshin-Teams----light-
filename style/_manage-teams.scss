@@ -1,5 +1,13 @@
 @use './_characters-list';
 
+.create__team-main{
+    background-color: rgba(35, 49, 48, 0.75);
+}
+
+.team__form{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 form{
     display: flex;
     flex-flow: column nowrap;
@@ -20,6 +28,7 @@ form{
     #team__name{
         border: none;
         border-bottom: 3px solid lightgrey;
+        background-color: transparent;
 
         &:focus,
         &:active{

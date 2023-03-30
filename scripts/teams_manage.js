@@ -164,29 +164,20 @@ const saveBtn = document.querySelector(".save");
     let temp_team_name = document.querySelector(".teams-name");
 
     teamArr = [];
-
+    
+    //empty Team object
     const teamObj = {
         teamName: team_name,
         team:  teamArr
     }
 
+    //add images to array
     for (let i = 0; i < team_members.length; i++) {
             let teamIcons = team_members[i].firstChild.src;
             teamArr.push(teamIcons);              
         }
 
-    //test obj
-    //console.log(JSON.stringify(teamObj));
-    localStorage.setItem("Team", JSON.stringify(teamObj));
-
-    //localStorage & Validation
-    /*
-    localStorage.setItem("Team_Member_1", teamArr[0]);
-    localStorage.setItem("Team_Member_2", teamArr[1]);
-    localStorage.setItem("Team_Member_3", teamArr[2]);
-    localStorage.setItem("Team_Member_4", teamArr[3]); 
-    */
-
+    //validate if input field is emppty & set input value
     const errorName = document.querySelector(".error__name"); //Error display
 
     if(team_name == null || team_name == ''){
@@ -198,10 +189,11 @@ const saveBtn = document.querySelector(".save");
         if(errorName.style.display == "block"){
             errorName.style.display = "none";
         }
-        temp_team_name = team_name;
-        //localStorage.setItem("Team_Name", temp_team_name);  
+        temp_team_name = team_name; 
     }
 
+    //save to localstorage
+    localStorage.setItem("Team", JSON.stringify(teamObj));
     
 }
 
