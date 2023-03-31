@@ -1,3 +1,5 @@
+@use './color-variables';
+
 ///VARIABLES
 /// 
 $bgcolor-char-legend: purple;
@@ -11,9 +13,6 @@ $color-electro: #fa62ff;
 $color-geo: #ffd955;
 $color-hydro: #518dff;
 $color-pyro: #ff7f7b;
-
-///MIXINS
-//element classes
 
 
 ///Site Style

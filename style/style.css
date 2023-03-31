@@ -1,12 +1,25 @@
 nav {
-  background-color: #111;
+  background-color: whitesmoke;
+  border-top: 1px solid rgb(216, 146, 99);
+  border-bottom: 1px solid rgb(216, 146, 99);
+  outline: 5px solid whitesmoke;
+}
+nav .nav-link {
+  color: rgb(216, 146, 99);
+  font-weight: 500;
+}
+nav .navbar-brand {
+  color: rgb(216, 146, 99);
+  font-weight: 700;
+}
+
+.disabled {
+  color: grey;
 }
 
 h1 {
   font-family: "Alegreya", serif;
-  font-weight: 600;
   letter-spacing: 3px;
-  color: whitesmoke;
 }
 
 * {
@@ -20,6 +33,7 @@ html,
 body {
   height: 100%;
   background-image: url("images/craiyon_120003_realistic_space_universe_seamless.png");
+  background-size: cover;
 }
 
 #home_main {

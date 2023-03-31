@@ -1,3 +1,5 @@
+@use './color-variables';
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ html,
 body{
     height: 100%;
     background-image: url('images/craiyon_120003_realistic_space_universe_seamless.png');
+    background-size: cover;
 }
 
 #home_main{

@@ -193,8 +193,8 @@ const saveBtn = document.querySelector(".save");
     }
 
     //save to localstorage
-    localStorage.setItem("Team", JSON.stringify(teamObj));
-    
+    //loop length of localstorage, add to ls identity [i]
+    localStorage.setItem("Team", JSON.stringify(teamObj));    
 }
 
 });
