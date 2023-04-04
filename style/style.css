@@ -1,15 +1,14 @@
 nav {
   background-color: whitesmoke;
-  border-top: 1px solid rgb(216, 146, 99);
-  border-bottom: 1px solid rgb(216, 146, 99);
-  outline: 5px solid whitesmoke;
+  border: 2px solid rgb(216, 146, 99);
+  outline: 4px solid whitesmoke;
 }
 nav .nav-link {
   color: rgb(216, 146, 99);
   font-weight: 500;
 }
 nav .navbar-brand {
-  color: rgb(216, 146, 99);
+  color: rgb(80, 94, 124);
   font-weight: 700;
 }
 
@@ -70,6 +69,9 @@ body {
   background-color: whitesmoke;
   margin: 1rem;
   border-radius: 0.5rem;
+}
+.team__front__container .teams-name {
+  color: rgb(80, 94, 124);
 }
 .team__front__container .teams-characters {
   display: flex;

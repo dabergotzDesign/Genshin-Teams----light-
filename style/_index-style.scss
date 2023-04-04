@@ -1,5 +1,7 @@
 @use './color-variables';
 
+$font-color-head: rgb(80 94 124);
+
 *{
     margin: 0;
     padding: 0;
@@ -53,12 +55,16 @@ body{
     margin: 1rem;
     border-radius: .5rem;
 
+    .teams-name{
+        color: $font-color-head;
+    }
+
     .teams-characters{
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-evenly;
-
+        
         .team{
             background-color: lightgray;
             border-radius: .5rem;

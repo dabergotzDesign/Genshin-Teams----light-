@@ -1,10 +1,11 @@
 @use './color-variables';
 
+$font-color-head: rgb(80 94 124);
+
 nav{
     background-color: whitesmoke;
-    border-top: 1px solid rgb(216, 146, 99);
-    border-bottom: 1px solid rgb(216, 146, 99);
-    outline: 5px solid whitesmoke;
+    border: 2px solid rgb(216, 146, 99);
+    outline: 4px solid whitesmoke;
 
     .nav-link{
         color:rgb(216, 146, 99);
@@ -12,7 +13,7 @@ nav{
     }
 
     .navbar-brand {
-        color:rgb(216, 146, 99);
+        color:$font-color-head;
         font-weight: 700;
     }
 }
