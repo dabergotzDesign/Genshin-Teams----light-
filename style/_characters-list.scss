@@ -76,35 +76,36 @@ body{
     height: 96px;
     width: auto;
     border-radius: .5rem;
+
+    &.Anemo{
+        background-image: linear-gradient((darken($color-anemo, 10%)), $color-anemo);
+    }
+    
+    &.Cryo{
+        background-image: linear-gradient((darken($color-cryo, 10%)), $color-cryo);
+    }
+    
+    &.Dendro{
+        background-image: linear-gradient((darken($color-dendro, 10%)), $color-dendro);
+    }
+    
+    &.Electro{
+        background-image: linear-gradient((darken($color-electro, 10%)), $color-electro);
+    }
+    
+    &.Geo{
+        background-image: linear-gradient((darken($color-geo, 10%)), $color-geo);
+    }
+    
+    &.Hydro{
+        background-image: linear-gradient((darken($color-hydro, 10%)), $color-hydro);
+    }
+    
+    &.Pyro{
+        background-image: linear-gradient((darken($color-pyro, 10%)), $color-pyro);
+    }
 }
 
-.Anemo{
-    background-image: linear-gradient((darken($color-anemo, 10%)), $color-anemo);
-}
-
-.Cryo{
-    background-image: linear-gradient((darken($color-cryo, 10%)), $color-cryo);
-}
-
-.Dendro{
-    background-image: linear-gradient((darken($color-dendro, 10%)), $color-dendro);
-}
-
-.Electro{
-    background-image: linear-gradient((darken($color-electro, 10%)), $color-electro);
-}
-
-.Geo{
-    background-image: linear-gradient((darken($color-geo, 10%)), $color-geo);
-}
-
-.Hydro{
-    background-image: linear-gradient((darken($color-hydro, 10%)), $color-hydro);
-}
-
-.Pyro{
-    background-image: linear-gradient((darken($color-pyro, 10%)), $color-pyro);
-}
 
 
 ///MEDIA QUERY

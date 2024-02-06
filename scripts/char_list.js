@@ -1,7 +1,7 @@
 
 
 //fetch characters
-const url_base = `https://api.genshin.dev/`; //base fetch
+const url_base = `https://genshin.jmp.blue/`; //base fetch
 
 //Character list
 fetch(url_base + "characters/")
@@ -17,9 +17,10 @@ fetch(url_base + "characters/")
         
         //create list image icons
         let char_list_icon = document.createElement("img");
-        char_list_icon.setAttribute("src", `https://api.genshin.dev/characters/${char}/icon`);
+        char_list_icon.setAttribute("src", url_base + `characters/${char}/icon-big`);
 
-        fetch(`https://api.genshin.dev/characters/${char}/`)
+    
+        fetch(`https://genshin.jmp.blue/characters/${char}`)
         .then(visions => visions.json())
         .then(visions =>{
             //console.log(visions.vision);
@@ -28,8 +29,20 @@ fetch(url_base + "characters/")
         });
 
         //if image is not loaded, change image
+        let retries = 0;
+
         char_list_icon.onerror = () =>{
-            char_list_icon.setAttribute("src", `https://api.genshin.dev/characters/${char}/icon-big`);
+               if(retries < 1){
+                retries++;
+                load();
+               }
+               else{
+                char_list_icon.setAttribute("src", '../style/images/placeholder_char.png');
+               }
+        }
+
+        function load() {
+            char_list_icon.setAttribute("src", url_base + `characters/${char}/icon`);
         }
 
         char_list_icon.setAttribute("alt", char + " icon");
@@ -52,5 +65,6 @@ fetch(url_base + "characters/")
         char_list.appendChild(char_list_item);
     }
 });
+
 
 

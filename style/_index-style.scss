@@ -25,20 +25,20 @@ body{
     }
 
     .add__team-btn{
-        position: absolute;
-        background-color: darkgrey;
-        left: 50%;
-        font-size: 2rem;
-        padding: 0 .8rem;
+        display: block;
+        margin: auto;
+
+        width: fit-content;
+        height: fit-content;
+
+
+        background-color: rgba(169, 169, 169, 0.6);
+        outline: 2px solid whitesmoke;
         font-weight: bold;
         border-radius: 50%;
         text-align: center;
-
-        a{
-            text-decoration: none;
-            color: whitesmoke;
-            position: relative;
-        }
+        text-decoration: none;
+        color: whitesmoke;
     }
 }
 

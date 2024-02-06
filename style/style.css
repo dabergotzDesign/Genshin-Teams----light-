@@ -43,19 +43,19 @@ body {
   position: relative;
 }
 #home_main .add__team-btn {
-  position: absolute;
-  background-color: darkgrey;
-  left: 50%;
-  font-size: 2rem;
-  padding: 0 0.8rem;
+  display: block;
+  margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(169, 169, 169, 0.6);
+  outline: 2px solid whitesmoke;
   font-weight: bold;
   border-radius: 50%;
   text-align: center;
-}
-#home_main .add__team-btn a {
   text-decoration: none;
   color: whitesmoke;
-  position: relative;
 }
 
 #teams__list {
@@ -148,32 +148,25 @@ body {
   width: auto;
   border-radius: 0.5rem;
 }
-
-.Anemo {
+.character__icon.Anemo {
   background-image: linear-gradient(#00ae6d, #00e18d);
 }
-
-.Cryo {
+.character__icon.Cryo {
   background-image: linear-gradient(#1eddff, #51e5ff);
 }
-
-.Dendro {
+.character__icon.Dendro {
   background-image: linear-gradient(#6dbd00, #8bf000);
 }
-
-.Electro {
+.character__icon.Electro {
   background-image: linear-gradient(#f82fff, #fa62ff);
 }
-
-.Geo {
+.character__icon.Geo {
   background-image: linear-gradient(#ffce22, #ffd955);
 }
-
-.Hydro {
+.character__icon.Hydro {
   background-image: linear-gradient(#1e6cff, #518dff);
 }
-
-.Pyro {
+.character__icon.Pyro {
   background-image: linear-gradient(#ff4e48, #ff7f7b);
 }
 
@@ -203,6 +196,7 @@ form label {
 form input {
   width: 200px;
   padding-left: 0.25rem;
+  color: whitesmoke;
 }
 form #team__name {
   border: none;

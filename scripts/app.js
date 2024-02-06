@@ -3,7 +3,7 @@ let listOfTeams = document.getElementById("teams__list");
 let TeamStore = JSON.parse(localStorage.getItem("Team"));
 
 //loop length of localstorage (max 10), render teams (Team + ls-length)
-//const maxL = 10;
+const maxL = 10;
 
 if(localStorage != null){
 

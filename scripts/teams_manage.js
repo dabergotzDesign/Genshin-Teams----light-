@@ -1,4 +1,4 @@
-const url = 'https://api.genshin.dev/';
+const url = 'https://genshin.jmp.blue/';
 
 fetch(url + "characters/")
 .then(data => data.json())
@@ -16,10 +16,10 @@ const char_roster = document.getElementById("roster");
 
 //create list image icons
 let char_roster_icon = document.createElement("img");
-char_roster_icon.setAttribute("src", `https://api.genshin.dev/characters/${icon}/icon`);
+char_roster_icon.setAttribute("src", url + `characters/${icon}/icon-big`);
 
 //Element background
-fetch(`https://api.genshin.dev/characters/${icon}/`)
+fetch(`https://genshin.jmp.blue/characters/${icon}/`)
         .then(visions => visions.json())
         .then(visions =>{
             //console.log(visions.vision);
@@ -28,9 +28,23 @@ fetch(`https://api.genshin.dev/characters/${icon}/`)
         });
 
 //if image is not loaded, change image
+let retries = 0;
+
 char_roster_icon.onerror = () =>{
-   char_roster_icon.setAttribute("src", `https://api.genshin.dev/characters/${icon}/icon-big`);
+    if(retries < 1){
+        retries++;
+        load();        
+    }
+    else{
+        char_roster_icon.setAttribute("src", '../style/images/placeholder_char.png');
+    }
+    
 }
+
+function load() {
+    char_roster_icon.setAttribute("src", url + `characters/${icon}/icon`);    
+}
+
 
 char_roster_icon.setAttribute("alt", icon + " icon");
 char_roster_icon.className = "character__icon";
