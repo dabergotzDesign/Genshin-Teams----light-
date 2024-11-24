@@ -11,6 +11,43 @@ for (const icon of data) {
     //create list elements
 let char_roster_item = document.createElement("li");
 char_roster_item.className = "character__item";
+//add onclick - <li class="character__item" onclick=setSlot(this)>...</li>
+char_roster_item.setAttribute("onclick", "setSlot(this)");
+
+//add character to team
+let slot = document.querySelectorAll(".slot");
+
+
+    slot.forEach(el => {
+        
+        el.addEventListener("click", ()=>{
+
+            el.classList.add("active");
+
+            if(el.classList.contains("active")){
+                
+                char_roster_item.onclick = setSlot;
+                //console.log("slot ready");
+                
+            }
+        })
+
+    });
+
+
+
+function setSlot(imgParent) {
+
+    //console.log(imgParent.currentTarget.firstChild.src);
+
+   let active = document.querySelector(".active");                        
+        active.innerHTML = `<img src=${imgParent.currentTarget.firstChild.src} alt="team member icon" >`;
+
+    document.querySelector(".active").classList.remove("active");
+
+}
+
+
 
 const char_roster = document.getElementById("roster");
 
@@ -27,7 +64,7 @@ fetch(`https://genshin.jmp.blue/characters/${icon}/`)
             
         });
 
-//if image is not loaded, change image
+//if image is not loaded, change image or use placeholder
 let retries = 0;
 
 char_roster_icon.onerror = () =>{
@@ -42,7 +79,7 @@ char_roster_icon.onerror = () =>{
 }
 
 function load() {
-    char_roster_icon.setAttribute("src", url + `characters/${icon}/icon`);    
+    char_roster_icon.setAttribute("src", url + `characters/${icon}/icon`);   
 }
 
 
@@ -61,155 +98,42 @@ char_roster.appendChild(char_roster_item);
 
 }
 
-//add team member team event
-
-window.addEventListener('click', addTeamMember);
-
-
-function addTeamMember(e) {
-    if(e.target.className.indexOf("character__item")){
-        let char_team_icon = e.target.parentNode.firstChild.src;
-
-        const teamMember01 = document.querySelector(".member01"); //start
-        const teamMember02 = document.querySelector(".member02"); //start
-        const teamMember03 = document.querySelector(".member03"); //start
-        const teamMember04 = document.querySelector(".member04"); //start
-        const team_char = document.getElementsByClassName("character__item"); //confirm
-
-        const promise01 = new Promise((resolve, reject)=>{
-            teamMember01.addEventListener('click', resolve);
-        });
-
-        const promise02 = new Promise((resolve, reject)=>{
-            teamMember02.addEventListener('click', resolve);
-        });
-
-        const promise03 = new Promise((resolve, reject)=>{
-            teamMember03.addEventListener('click', resolve);
-        });
-
-        const promise04 = new Promise((resolve, reject)=>{
-            teamMember04.addEventListener('click', resolve);
-        });
-        
-        function onChoose(){
-            console.log("choose your fighter")
-        }
-
-        //First Team Member
-        async function wait_01(){
-            return await promise01
-            .then(()=>{
-                teamMember01.addEventListener('click', ()=>{
-                    team_char
-                });
-            })
-            .catch((err)=> console.log(err));
-        }
-
-        wait_01()
-        .then(() => {
-            onChoose();
-            teamMember01.innerHTML = `<img src="${char_team_icon}">`
-        })
-
-        //Second Team Member
-        async function wait_02(){
-            return await promise02
-            .then(()=>{
-                teamMember02.addEventListener('click', ()=>{
-                    team_char
-                });
-            })
-            .catch((err)=> console.log(err));
-        }
-
-        wait_02()
-        .then(() => {
-            onChoose();
-            teamMember02.innerHTML = `<img src="${char_team_icon}">`
-        })
-
-        //Third Team Member
-        async function wait_03(){
-            return await promise03
-            .then(()=>{
-                teamMember03.addEventListener('click', ()=>{
-                    team_char
-                });
-            })
-            .catch((err)=> console.log(err));
-        }
-
-        wait_03()
-        .then(() => {
-            onChoose();
-            teamMember03.innerHTML = `<img src="${char_team_icon}">`
-        })
-
-        //Fourth Team Member
-        async function wait_04(){
-            return await promise04
-            .then(()=>{
-                teamMember04.addEventListener('click', ()=>{
-                    team_char
-                });
-            })
-            .catch((err)=> console.log(err));
-        }
-
-        wait_04()
-        .then(() => {
-            onChoose();
-            teamMember04.innerHTML = `<img src="${char_team_icon}">`
-        })
-    }
-}
 
 
 ///SAVE EVENT
-const saveBtn = document.querySelector(".save");
+let saveButton = document.querySelector(".save"),
+    teamName = document.getElementById("team__name"),
+    member1 = document.querySelector(".member01"),
+    member2 = document.querySelector(".member02"),
+    member3 = document.querySelector(".member03"),
+    member4 = document.querySelector(".member04"),
+    db = new Localbase('teams');
 
- saveBtn.addEventListener("click", saveTeam);
-
- function saveTeam(e) {
-    const team_members = document.querySelectorAll(".team");
-    let team_name = document.querySelector("#team__name").value;
-    let temp_team_name = document.querySelector(".teams-name");
-
-    teamArr = [];
     
-    //empty Team object
-    const teamObj = {
-        teamName: team_name,
-        team:  teamArr
+saveButton.addEventListener("click", saveTeamCollection);
+
+
+function saveTeamCollection() {
+
+    if(teamName.value != ''){
+
+        db.collection('teams').add({
+            id: teamName.value,
+            member_1: member1.firstChild.src,
+            member_2: member2.firstChild.src,
+            member_3: member3.firstChild.src,
+            member_4: member4.firstChild.src      
+        })
+
+
+    } else if(teamName.value == ''){
+        let error = document.querySelector(".error__name");
+        error.style.display = "block";
     }
+ 
 
-    //add images to array
-    for (let i = 0; i < team_members.length; i++) {
-            let teamIcons = team_members[i].firstChild.src;
-            teamArr.push(teamIcons);              
-        }
-
-    //validate if input field is emppty & set input value
-    const errorName = document.querySelector(".error__name"); //Error display
-
-    if(team_name == null || team_name == ''){
-        e.preventDefault();
-        document.querySelector("#team__name").style.borderColor = "red";
-        //error text        
-        errorName.style.display = "block";
-    }else{
-        if(errorName.style.display == "block"){
-            errorName.style.display = "none";
-        }
-        temp_team_name = team_name; 
-    }
-
-    //save to localstorage
-    //loop length of localstorage, add to ls identity [i]
-    localStorage.setItem("Team", JSON.stringify(teamObj));    
 }
+
 
 });
 
@@ -225,3 +149,10 @@ buttonR.addEventListener('click', ()=>{
 buttonL.addEventListener('click', ()=>{
     roster.scrollLeft -= 80;
 });
+
+//redirect to home page
+const saveTeam = document.querySelector(".save");
+
+saveTeam.addEventListener("click", ()=>{
+    location.href = "../index.html";
+})

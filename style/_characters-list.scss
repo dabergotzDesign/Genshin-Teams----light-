@@ -29,14 +29,21 @@ body{
 }
 
 #list__main{
-    background-color: lightgrey;
+    background-color: rgba(211, 211, 211, 0.25);
 }
+
 
 .grid{
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1rem;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, 8.5em);
+    gap: 1em;
     padding-left: 0; //bootstrap disabled
+    padding-top: 5em;
+
+    @media screen and (min-width: 480px) {
+        padding-top: 2em;
+    }
 }
 
 .character__item{
@@ -68,14 +75,16 @@ body{
         width: 100%;
         z-index: 3;
     }
+    
 }
 
 ///Image Styles
 /// 
 .character__icon{
     height: 96px;
-    width: auto;
+    width: 96px;
     border-radius: .5rem;
+    margin-top: 0.8rem;
 
     &.Anemo{
         background-image: linear-gradient((darken($color-anemo, 10%)), $color-anemo);

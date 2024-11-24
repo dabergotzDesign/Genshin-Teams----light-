@@ -1,3 +1,13 @@
+:root {
+  --color-anemo: #00e18d;
+  --color-cryo: #51e5ff;
+  --color-dendro: #8bf000;
+  --color-electro: #fa62ff;
+  --color-geo: #ffd955;
+  --color-hydro: #518dff;
+  --color-pyro: #ff7f7b;
+}
+
 nav {
   background-color: whitesmoke;
   border: 2px solid rgb(216, 146, 99);
@@ -31,16 +41,29 @@ h1 {
 html,
 body {
   height: 100%;
-  background-image: url("images/craiyon_120003_realistic_space_universe_seamless.png");
+  background: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25)), url("images/craiyon_120003_realistic_space_universe_seamless.png");
+  background-attachment: fixed;
   background-size: cover;
+}
+html header,
+body header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
 #home_main {
   height: 100%;
-  background-image: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25));
+  /* background-image: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25));
+  background-attachment: fixed; */
+  padding-top: 5em;
 }
 #home_main section {
   position: relative;
+}
+#home_main section h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2em 0;
 }
 #home_main .add__team-btn {
   display: block;
@@ -49,13 +72,16 @@ body {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: rgba(169, 169, 169, 0.6);
+  /* background-color: rgba(169, 169, 169, 0.6);
   outline: 2px solid whitesmoke;
   font-weight: bold;
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  color: whitesmoke;
+  color: whitesmoke; */
+}
+#home_main .add__team-btn.disabled {
+  display: none;
 }
 
 #teams__list {
@@ -78,6 +104,12 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-evenly;
+}
+.team__front__container .teams-characters img.cryo {
+  background-color: var(--color-cryo);
+}
+.team__front__container .teams-characters .charName {
+  text-transform: capitalize;
 }
 .team__front__container .teams-characters .team {
   background-color: lightgray;
@@ -104,14 +136,21 @@ body {
 }
 
 #list__main {
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.25);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 1rem;
+  place-content: center;
+  grid-template-columns: repeat(auto-fill, 8.5em);
+  gap: 1em;
   padding-left: 0;
+  padding-top: 5em;
+}
+@media screen and (min-width: 480px) {
+  .grid {
+    padding-top: 2em;
+  }
 }
 
 .character__item {
@@ -145,8 +184,9 @@ body {
 
 .character__icon {
   height: 96px;
-  width: auto;
+  width: 96px;
   border-radius: 0.5rem;
+  margin-top: 0.8rem;
 }
 .character__icon.Anemo {
   background-image: linear-gradient(#00ae6d, #00e18d);
@@ -175,8 +215,118 @@ body {
     gap: 0.25rem;
   }
 }
+.char__main {
+  height: 100%;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+.char__main.anemo {
+  background-image: linear-gradient(#00e18d, transparent);
+}
+.char__main.cryo {
+  background-image: linear-gradient(#51e5ff, transparent);
+}
+.char__main.dendro {
+  background-image: linear-gradient(#8bf000, transparent);
+}
+.char__main.electro {
+  background-image: linear-gradient(#fa62ff, transparent);
+}
+.char__main.geo {
+  background-image: linear-gradient(#ffd955, transparent);
+}
+.char__main.hydro {
+  background-image: linear-gradient(#518dff, transparent);
+}
+.char__main.pyro {
+  background-image: linear-gradient(#ff7f7b, transparent);
+}
+.char__main a {
+  border: none;
+  background-image: linear-gradient(wheat, rgb(245, 212, 150));
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 2px solid rgb(194, 102, 16);
+  position: absolute;
+  bottom: 12%;
+}
+.char__main a span {
+  padding-right: 0.25rem;
+  font-weight: 600;
+}
+.char__data {
+  background-color: rgba(17, 17, 17, 0.5490196078);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.char__data h1 {
+  color: whitesmoke;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0.5rem;
+}
+.char__data img {
+  max-width: 100%;
+  width: 10%;
+  height: auto;
+  padding: 0.25em;
+}
+.char__rarity {
+  margin-bottom: 0.5rem;
+}
+.char__rarity li {
+  display: inline-block;
+  list-style: none;
+}
+.char__container {
+  position: relative;
+}
+.char__container .vision {
+  background-image: linear-gradient(-250deg, whitesmoke, dimgrey);
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.25rem;
+  border-radius: 80%;
+  border: 2px solid;
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  z-index: 10;
+}
+.char__container .vision__icon {
+  background-image: radial-gradient(lightgrey, dimgrey);
+  border-radius: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+.char__container .char__portrait {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(2px 2px 4px #111);
+}
+
 .create__team-main {
   background-color: rgba(35, 49, 48, 0.75);
+  padding-top: 4em;
 }
 
 .team__form {
@@ -239,13 +389,21 @@ form .error__name {
   margin: 0.5rem;
   font-size: 2.5rem;
   text-align: center;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.team__container .button:active {
-  box-shadow: inset 1px 1px 2px grey;
+.team__container .button i {
+  color: dimgray;
+}
+.team__container .button.active {
+  box-shadow: 0 0 8px rgb(255, 241, 160);
 }
 .team__container .button img {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
 }
 
 .character-roster-section {

@@ -12,16 +12,32 @@ $font-color-head: rgb(80 94 124);
 html,
 body{
     height: 100%;
-    background-image: url('images/craiyon_120003_realistic_space_universe_seamless.png');
+    background: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25)), url('images/craiyon_120003_realistic_space_universe_seamless.png');
+    background-attachment: fixed;
     background-size: cover;
+
+    header{
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+    }
+
 }
+
 
 #home_main{
     height: 100%;
-    background-image: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25));
+    /* background-image: linear-gradient(rgba(0, 255, 255, 0.25), rgba(245, 245, 245, 0.25));
+    background-attachment: fixed; */
+    padding-top: 5em;
 
     section{
         position: relative;
+
+        h2{
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2em 0;
+        }
     }
 
     .add__team-btn{
@@ -32,13 +48,17 @@ body{
         height: fit-content;
 
 
-        background-color: rgba(169, 169, 169, 0.6);
+        /* background-color: rgba(169, 169, 169, 0.6);
         outline: 2px solid whitesmoke;
         font-weight: bold;
         border-radius: 50%;
         text-align: center;
         text-decoration: none;
-        color: whitesmoke;
+        color: whitesmoke; */
+
+        &.disabled{
+            display: none;
+        }
     }
 }
 
@@ -64,6 +84,16 @@ body{
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-evenly;
+
+        img{
+            &.cryo{
+                background-color: var(--color-cryo);
+            }
+        }
+
+        .charName{
+            text-transform: capitalize;
+        }
         
         .team{
             background-color: lightgray;

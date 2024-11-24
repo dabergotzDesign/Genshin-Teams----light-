@@ -9,6 +9,8 @@ fetch(url_base + "characters/")
 .then(characters => {
 
     for (const char of characters) {
+    
+        
         //create list elements
         let char_list_item = document.createElement("li");
         char_list_item.className = "character__item";
@@ -53,18 +55,23 @@ fetch(url_base + "characters/")
         let char_list_name = document.createElement("p");
         char_list_name.textContent = char;
         char_list_name.className = "character__name";
-        char_list_item.appendChild(char_list_name);
-
-        //create link to single characters
-        /*
+        char_list_item.appendChild(char_list_name); 
+        
+        
+        //link to subpage
         let char_link = document.createElement("a");
-        char_link.setAttribute("href", `./characters/${char}.pg.html`);
+        char_link.setAttribute("href", '../content/characters/' + char + ".html");
         char_list_item.appendChild(char_link);
-        */
 
         char_list.appendChild(char_list_item);
+
+
+        
     }
+
+ 
 });
+
 
 
 
